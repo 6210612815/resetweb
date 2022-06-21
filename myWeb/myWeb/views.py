@@ -18,11 +18,11 @@ def index(request):
          & APPEND IN DB
     ELSE:
         RETURN GREETING PAGE
-    """
+    
 
     try:
-        user = 'Uaa37289a5faf8eb0f26b689216a67f58'
-        employee = Employee.objects.get(user_id=user)
+        user = 'Uaa37289a5faf8eb0f26b689216a67f5'
+        employee = Employee.objects.get(line_id=user)
         
 
         body = {
@@ -43,13 +43,14 @@ def index(request):
         return render(request, 'greet.html', data)
 
     except Employee.DoesNotExist:
-        if request.method == "POST":
-            form = EmployeeForm(request.POST)
-            if form.is_valid:
-                form.save()
-        else:
-            form = EmployeeForm()
-        return render(request, 'index.html', {'form': form})
+    """
+    if request.method == "POST":
+        form = EmployeeForm(request.POST)
+        if form.is_valid:
+            form.save()
+    else:
+        form = EmployeeForm()
+    return render(request, 'index.html', {'form': form})
 
 
     

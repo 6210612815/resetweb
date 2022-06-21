@@ -4,7 +4,9 @@ from django.contrib import admin
 from .models import *
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ("employee_id", "personal_id","user_id")
+    list_display = ("employee_id", "personal_id","line_id")
 
 admin.site.register(Employee, EmployeeAdmin)
+admin.site.register(Line)
+
 
