@@ -11,20 +11,20 @@
     <body>
         <p>15856</p>
         <p>1409600130803</p>
+        <p>11055</p>
+        <p>3101400386245</p>
+        
         {% if not form.is_valid %}
-            <form method='post' action="{% url 'greet' %}">
+            <form method='post' action="{% url 'index' %}">
                 {% csrf_token %}
-                <table>
-                    <tr>
-                        <td><label for="employee_id">Employee ID:</label></td>
-                        <td><input type='number' id='employee_id' name='employee_id'></td>
-                    </tr>
-                    <tr>
-                        <td><label for="personal_id">Personal ID:</label></td>
-                        <td><input type='number' id='personal_id' name='personal_id'></td>
-                    </tr>
-                </table>
-                <input type="submit">
+                <p>Enter your Employee ID</p>
+                <small>Please enter your employee ID.</small><br>
+                <input type="text" name="employee_id" placeholder="">
+                <p>Enter your Personal ID card number</p>
+                <small>Please enter your 13-digit ID Card number.</small><br>
+                <input type="number" name="personal_id" placeholder=""><br>
+
+                <button class="btn" type="submit">ENTER</button>
             </form>
         {% endif %}
         {% if messages %}
